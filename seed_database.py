@@ -56,6 +56,7 @@ for n in range(10):
         score = randint(1,5)
         random_movie = choice(movies_in_db)
 
-        rating = crud.create_rating(score, random_movie)
+        rating = crud.create_rating(user, random_movie, score)
         
         model.db.session.add(rating)
+model.db.session.commit() 
